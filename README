@@ -1,0 +1,57 @@
+#################################################
+# COMP40                                        #
+# HW5 Analysis of AMD64 Assembly Code           #
+# Lionel Oh (loh01) and Andrew Gross (agross09) #
+# README                                        #
+#################################################
+
+# Bomb Number: 26
+
+# Help and Collaborations: 
+The various COMP40 TAs, particularly Patrick Wolfe, Winston Tan, Manish Aryal, 
+Mert Erden, Ashton Stephens, Dylan Hoffman, Daniel Lan, Jared Hwang
+
+# Approximate Amount of Time Spent: 20 hours
+
+# Explanations of Phases: 
+
+Phase 1 reads in a string, and explodes the bomb if the input string does not 
+match the hardcoded string. The keyword string is "Why waste those cute little
+tricks that the Army taught us?".
+
+Phase 2 reads in six numbers (separated by spaces), and explodes the bomb if the
+input is not as expected. It then compares the first, second, and third number 
+to the fourth, fifth, and sixth number respectively. When comparing, the bomb 
+will explode if any pair is not equal. The bomb will also explode if the sum of
+the first three numbers is less than or equal to zero. 
+
+Phase 3 reads in three arguments in order: a number, a character, and a number.
+If the number of arguments is less than three, the bomb will explode. If the 
+first number argument is more than 7, it also explodes the bomb. Depending on 
+the value of the first number argument, there is a corresponding number that 
+the second number argument needs to be equal to. Otherwise, the bomb will 
+explode. This number pair will then also determine a corresponding character 
+that the character argument needs to be equal to. Otherwise, the bomb will 
+explode.
+
+Phase 4 reads in one integer argument. If more arguments are given, the bomb 
+will explode. The value of the integer also has to be more than 0, otherwise 
+the bomb will explode. The factorial of the integer then has to be equal to 
+5040, otherwise the bomb will explode.  
+
+Phase 5 reads in a string and calculates the length of the input string. If the
+length is not 6, the bomb will explode. It executes a bitwise AND operation on 
+each character of the input string with a given value to calculate an index. 
+Then, referencing a hardcoded string, it replaces the input string character at
+that given position with the character at the index of the hardcoded string. If
+the resultant string does not equal “titans”, it explodes the bomb.
+
+Phase 6 reads in a number. It then does an insertion sort on a hardcoded linked
+list, sorting it in descending order. Afterwards, it compares the input number 
+with the value of the smallest node in the linked list. If they are not equal, 
+the bomb will explode.
+    
+Phase 7, the secret phase, reads in a number. It then compares the result of the
+number minus 1 with 1000. If it is more than 1000, the bomb will explode. It 
+will subsequently check if the number is not 0, and if the number is equal to 
+36. Fulfilling these conditions will defuse the bomb.
